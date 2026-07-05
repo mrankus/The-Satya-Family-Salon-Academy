@@ -1,386 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Satya Family Salon & Academy — Gaya</title>
-<meta name="description" content="Gaya's trusted family salon and beauty academy. Book hair, skin, bridal and grooming appointments online." />
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonu Photography Studio Gaya Jii | Wedding, Portrait & Event Photography</title>
+<meta name="description" content="Gaya's trusted photography studio for weddings, pre-wedding shoots, family portraits and events. Book your session online.">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          maroon: { DEFAULT: '#6B1E3C', dark: '#4A1329', light: '#8A2C4E' },
-          gold: { DEFAULT: '#C99A3D', light: '#E4C577', dark: '#A87F2C' },
-          emerald: { DEFAULT: '#1F4B3F', dark: '#153933' },
-          cream: '#FBF6EC',
-          blush: '#F3DEE2',
-          ink: '#2A2220',
-        },
-        fontFamily: {
-          display: ['Fraunces', 'serif'],
-          body: ['Manrope', 'sans-serif'],
-          mono: ['IBM Plex Mono', 'monospace'],
-        },
-      },
-    },
-  };
-</script>
-
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Manrope', sans-serif; background-color: #FBF6EC; color: #2A2220; }
-  .font-display { font-family: 'Fraunces', serif; }
-
-  /* Signature motif: a hand-drawn-style flourish divider, evoking mehendi linework used across Indian bridal/salon craft */
-  .flourish {
-    display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+  :root{
+    --ink:#15110D;
+    --surface:#1F1811;
+    --surface-2:#251D14;
+    --bone:#F2E9D8;
+    --bone-dim:#C9BFAC;
+    --brass:#C89B4C;
+    --brass-light:#E4C486;
+    --maroon:#8A2C35;
+    --maroon-light:#A83B45;
   }
-  .flourish svg { flex-shrink: 0; }
-
-  .grain::before {
-    content: "";
-    position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-    pointer-events: none;
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--bone);
+    font-family:'Work Sans',sans-serif;
   }
+  .font-display{font-family:'Fraunces',serif;}
+  .font-mono{font-family:'JetBrains Mono',monospace;}
 
-  .card-hover { transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s ease; }
-  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(107,30,60,0.25); }
-
-  .tab-underline { position: relative; }
-  .tab-underline::after {
-    content: ""; position: absolute; left: 0; bottom: -2px; height: 2px; width: 0%;
-    background: #C99A3D; transition: width 0.3s ease;
-  }
-  .tab-active.tab-underline::after { width: 100%; }
-
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.in { opacity: 1; transform: translateY(0); }
-
-  ::selection { background: #C99A3D; color: #4A1329; }
-
-  .scrollbar-none::-webkit-scrollbar { display: none; }
-  .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
-
-  input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
-    outline: 2px solid #C99A3D; outline-offset: 2px;
+  .grain{
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(200,155,76,0.06), transparent 40%),
+      radial-gradient(circle at 80% 60%, rgba(138,44,53,0.10), transparent 45%);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; transition: none !important; }
+  /* Viewfinder corner brackets - signature motif */
+  .frame-corners{ position:relative; }
+  .frame-corners::before,
+  .frame-corners::after,
+  .frame-corners .fc-tr,
+  .frame-corners .fc-bl{
+    content:"";
+    position:absolute;
+    width:22px; height:22px;
+    border-color:var(--brass);
+    opacity:0.9;
+  }
+  .frame-corners::before{ top:-1px; left:-1px; border-top:2px solid var(--brass); border-left:2px solid var(--brass);}
+  .frame-corners::after{ bottom:-1px; right:-1px; border-bottom:2px solid var(--brass); border-right:2px solid var(--brass);}
+  .frame-corners .fc-tr{ top:-1px; right:-1px; border-top:2px solid var(--brass); border-right:2px solid var(--brass);}
+  .frame-corners .fc-bl{ bottom:-1px; left:-1px; border-bottom:2px solid var(--brass); border-left:2px solid var(--brass);}
+
+  .aperture-spin{ animation: spin 22s linear infinite; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  .btn-primary{
+    background:var(--maroon);
+    color:var(--bone);
+    transition:background .25s ease, transform .2s ease;
+  }
+  .btn-primary:hover{ background:var(--maroon-light); transform:translateY(-2px); }
+
+  .btn-secondary{
+    border:1px solid var(--brass);
+    color:var(--brass-light);
+    transition:background .25s ease, color .25s ease, transform .2s ease;
+  }
+  .btn-secondary:hover{ background:var(--brass); color:var(--ink); transform:translateY(-2px); }
+
+  .card{
+    background:var(--surface);
+    border:1px solid rgba(200,155,76,0.15);
+  }
+
+  .nav-link{
+    position:relative;
+    color:var(--bone-dim);
+    transition:color .2s ease;
+  }
+  .nav-link::after{
+    content:"";
+    position:absolute; left:0; bottom:-4px;
+    width:0; height:1px; background:var(--brass);
+    transition:width .25s ease;
+  }
+  .nav-link:hover{ color:var(--bone); }
+  .nav-link:hover::after{ width:100%; }
+
+  .divider-aperture{
+    display:inline-block; width:6px; height:6px; border-radius:9999px;
+    background:var(--brass); opacity:.7;
+  }
+
+  input[type=text], input[type=tel], input[type=email], input[type=date], input[type=time], select, textarea{
+    background:var(--ink);
+    border:1px solid rgba(200,155,76,0.25);
+    color:var(--bone);
+  }
+  input:focus, select:focus, textarea:focus{
+    outline:none; border-color:var(--brass); box-shadow:0 0 0 3px rgba(200,155,76,0.15);
+  }
+  input::placeholder, textarea::placeholder{ color:#8a8172; }
+
+  ::selection{ background:var(--brass); color:var(--ink); }
+
+  .scrollbar-thin::-webkit-scrollbar{ height:6px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb{ background:var(--brass); border-radius:9999px; }
+
+  .slot-btn.selected{ background:var(--brass); color:var(--ink); }
+
+  @media (prefers-reduced-motion: reduce){
+    .aperture-spin{ animation:none; }
+    .reveal{ transition:none; opacity:1; transform:none; }
   }
 </style>
 </head>
+<body class="grain">
 
-<body class="antialiased">
-
-<!-- ============ NAVIGATION ============ -->
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-cream/95 backdrop-blur-sm border-b border-maroon/10">
-  <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-3 group">
-      <span class="w-11 h-11 rounded-full bg-maroon text-gold flex items-center justify-center font-display text-lg italic border border-gold/40">S</span>
-      <span class="leading-tight">
-        <span class="block font-display text-xl text-maroon tracking-tight">The Satya Family</span>
-        <span class="block text-[11px] tracking-[0.25em] uppercase text-emerald font-semibold">Salon &amp; Academy</span>
+<!-- ============ NAV ============ -->
+<header id="top" class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-[#15110D]/85 border-b border-[rgba(200,155,76,0.15)]">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3">
+      <span class="relative flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full border" style="border-color:var(--brass)">
+        <svg viewBox="0 0 48 48" class="w-5 h-5 md:w-6 md:h-6 aperture-spin" style="color:var(--brass-light)">
+          <g fill="currentColor">
+            <path d="M24 4 L30 16 L20 16 Z"/>
+            <path d="M44 24 L32 30 L32 20 Z" transform="rotate(60 24 24)"/>
+            <path d="M44 24 L32 30 L32 20 Z" transform="rotate(120 24 24)"/>
+            <path d="M44 24 L32 30 L32 20 Z" transform="rotate(180 24 24)"/>
+            <path d="M44 24 L32 30 L32 20 Z" transform="rotate(240 24 24)"/>
+            <path d="M44 24 L32 30 L32 20 Z" transform="rotate(300 24 24)"/>
+          </g>
+        </svg>
+      </span>
+      <span class="font-display leading-none">
+        <span class="block text-base md:text-lg tracking-wide" style="color:var(--bone)">Sonu Photography Studio</span>
+        <span class="block text-[10px] md:text-xs font-mono tracking-[0.25em] uppercase" style="color:var(--brass)">Gaya Jii</span>
       </span>
     </a>
 
-    <div class="hidden lg:flex items-center gap-9 font-medium text-sm text-ink/80">
-      <a href="#services" class="tab-underline hover:text-maroon transition-colors">Services</a>
-      <a href="#reviews" class="tab-underline hover:text-maroon transition-colors">Reviews</a>
-      <a href="#dashboard" class="tab-underline hover:text-maroon transition-colors">Manage Bookings</a>
-      <a href="#contact" class="tab-underline hover:text-maroon transition-colors">Contact</a>
-    </div>
+    <nav class="hidden lg:flex items-center gap-8 font-mono text-xs uppercase tracking-widest">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#dashboard" class="nav-link">Manage Bookings</a>
+    </nav>
 
     <div class="flex items-center gap-3">
-      <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-maroon hover:bg-maroon-dark text-cream text-sm font-semibold px-5 py-3 rounded-full transition-colors shadow-sm hover:shadow-md">
-        Book Appointment
-      </a>
-      <button id="menu-btn" aria-label="Open menu" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-maroon/20 text-maroon">
-        <svg id="menu-icon" width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M0 1H18M0 7H18M0 13H18" stroke="currentColor" stroke-width="1.5"/></svg>
+      <a href="#contact" class="hidden sm:inline-flex btn-primary px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-widest">Book Appointment</a>
+      <button id="menuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border" style="border-color:rgba(200,155,76,0.3)" aria-label="Open menu">
+        <svg id="menuIcon" class="w-5 h-5" style="color:var(--bone)" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
-  </nav>
+  </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-cream border-t border-maroon/10 px-6 py-5 flex flex-col gap-4 text-ink/85 font-medium">
-    <a href="#services" class="py-1 hover:text-maroon transition-colors">Services</a>
-    <a href="#reviews" class="py-1 hover:text-maroon transition-colors">Reviews</a>
-    <a href="#dashboard" class="py-1 hover:text-maroon transition-colors">Manage Bookings</a>
-    <a href="#contact" class="py-1 hover:text-maroon transition-colors">Contact</a>
-    <a href="#contact" class="text-center bg-maroon text-cream font-semibold px-5 py-3 rounded-full">Book Appointment</a>
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-[rgba(200,155,76,0.15)] bg-[#15110D]">
+    <div class="px-5 py-4 flex flex-col gap-4 font-mono text-xs uppercase tracking-widest">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#dashboard" class="nav-link">Manage Bookings</a>
+      <a href="#contact" class="btn-primary text-center px-5 py-3 rounded-full">Book Appointment</a>
+    </div>
   </div>
 </header>
 
 <!-- ============ HERO ============ -->
-<section class="relative pt-40 pb-28 sm:pt-48 sm:pb-36 overflow-hidden bg-maroon grain">
-  <div class="absolute inset-0">
-    <div class="absolute -top-24 -right-24 w-[30rem] h-[30rem] rounded-full bg-gold/10 blur-3xl"></div>
-    <div class="absolute -bottom-32 -left-20 w-[26rem] h-[26rem] rounded-full bg-emerald/30 blur-3xl"></div>
-  </div>
+<section class="relative pt-32 pb-24 md:pt-44 md:pb-32 px-5 md:px-8 overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-20 blur-3xl" style="background:var(--maroon)"></div>
+  <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full opacity-10 blur-3xl" style="background:var(--brass)"></div>
 
-  <div class="relative max-w-6xl mx-auto px-5 sm:px-8 text-center">
-    <p class="reveal flourish text-gold-light text-xs tracking-[0.35em] uppercase font-semibold mb-6">
-      <svg width="28" height="10" viewBox="0 0 28 10" fill="none"><path d="M0 5C6 -1 10 11 14 5C18 -1 22 11 28 5" stroke="#E4C577" stroke-width="1"/></svg>
-      Gaya's Trusted Name in Beauty, Since Generations
-      <svg width="28" height="10" viewBox="0 0 28 10" fill="none"><path d="M0 5C6 -1 10 11 14 5C18 -1 22 11 28 5" stroke="#E4C577" stroke-width="1"/></svg>
-    </p>
+  <div class="max-w-7xl mx-auto relative grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7 reveal">
+      <div class="flex items-center gap-2 mb-6 font-mono text-xs uppercase tracking-[0.3em]" style="color:var(--brass)">
+        <span class="divider-aperture"></span> Gaya, Bihar &middot; Est. Trusted Local Studio
+      </div>
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.08]" style="color:var(--bone)">
+        Every celebration in Gaya, <span class="italic" style="color:var(--brass-light)">held forever</span> in a frame.
+      </h1>
+      <p class="mt-6 text-base md:text-lg max-w-xl" style="color:var(--bone-dim)">
+        From your baraat to your baby's first smile, we photograph the moments your family will reach for, again and again. Book a session in minutes, no phone tag required.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="#contact" class="btn-primary px-7 py-3.5 rounded-full text-sm font-mono uppercase tracking-widest">Book Online Now</a>
+        <a href="#services" class="btn-secondary px-7 py-3.5 rounded-full text-sm font-mono uppercase tracking-widest">View Our Services</a>
+      </div>
 
-    <h1 class="reveal font-display text-[2.6rem] leading-[1.1] sm:text-6xl md:text-7xl text-cream font-semibold tracking-tight max-w-4xl mx-auto">
-      Where every family finds their <span class="italic text-gold-light">most confident</span> reflection
-    </h1>
-
-    <p class="reveal mt-7 text-cream/80 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-      Three generations of skilled hands, one academy-trained standard of care — bridal styling, hair, skin and grooming for every member of your family, done right the first time.
-    </p>
-
-    <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="#contact" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-maroon-dark font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-        Book Online Now
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </a>
-      <a href="#services" class="inline-flex items-center gap-2 border border-cream/30 hover:border-gold text-cream font-semibold px-8 py-4 rounded-full transition-colors hover:text-gold-light">
-        View Our Services
-      </a>
+      <div class="mt-12 flex items-center gap-8 flex-wrap">
+        <div>
+          <p class="font-display text-3xl" style="color:var(--bone)">4.9<span class="text-lg" style="color:var(--brass)">/5</span></p>
+          <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--bone-dim)">Google Rating</p>
+        </div>
+        <div class="w-px h-10" style="background:rgba(200,155,76,0.25)"></div>
+        <div>
+          <p class="font-display text-3xl" style="color:var(--bone)">1200+</p>
+          <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--bone-dim)">Moments Captured</p>
+        </div>
+        <div class="w-px h-10" style="background:rgba(200,155,76,0.25)"></div>
+        <div>
+          <p class="font-display text-3xl" style="color:var(--bone)">Same-Day</p>
+          <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--bone-dim)">Sneak-Peek Delivery</p>
+        </div>
+      </div>
     </div>
 
-    <div class="reveal mt-14 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-cream/70 text-sm">
-      <div class="flex items-center gap-2">
-        <span class="text-gold-light font-display text-lg">4.9★</span> Google Rating
+    <div class="lg:col-span-5 reveal">
+      <div class="frame-corners relative rounded-sm overflow-hidden">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+        <div class="aspect-[4/5] w-full flex items-center justify-center" style="background:linear-gradient(160deg,#2a2016,#181209)">
+          <svg viewBox="0 0 200 200" class="w-2/3 h-2/3 opacity-90">
+            <circle cx="100" cy="100" r="70" fill="none" stroke="var(--brass)" stroke-width="1.5"/>
+            <circle cx="100" cy="100" r="46" fill="none" stroke="var(--brass)" stroke-width="1.5"/>
+            <g fill="var(--brass)">
+              <path d="M100 30 L112 55 L88 55 Z"/>
+              <path d="M100 30 L112 55 L88 55 Z" transform="rotate(60 100 100)"/>
+              <path d="M100 30 L112 55 L88 55 Z" transform="rotate(120 100 100)"/>
+              <path d="M100 30 L112 55 L88 55 Z" transform="rotate(180 100 100)"/>
+              <path d="M100 30 L112 55 L88 55 Z" transform="rotate(240 100 100)"/>
+              <path d="M100 30 L112 55 L88 55 Z" transform="rotate(300 100 100)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="absolute bottom-0 inset-x-0 p-5 font-mono text-[11px] tracking-widest uppercase flex justify-between" style="background:linear-gradient(to top, rgba(0,0,0,0.6), transparent); color:var(--brass-light)">
+          <span>ISO 200</span><span>f/2.8</span><span>1/250</span>
+        </div>
       </div>
-      <span class="w-px h-4 bg-cream/20 hidden sm:block"></span>
-      <div>Unisex Salon &amp; Certified Academy</div>
-      <span class="w-px h-4 bg-cream/20 hidden sm:block"></span>
-      <div>Gaya, Bihar</div>
     </div>
   </div>
 </section>
 
-<!-- Flourish divider -->
-<div class="bg-cream py-3 flourish text-maroon/30">
-  <svg width="200" height="12" viewBox="0 0 200 12" fill="none"><path d="M0 6C20 -2 30 14 50 6C70 -2 80 14 100 6C120 -2 130 14 150 6C170 -2 180 14 200 6" stroke="currentColor" stroke-width="1"/></svg>
-</div>
-
 <!-- ============ SERVICES ============ -->
-<section id="services" class="py-24 sm:py-32 bg-cream">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <p class="text-emerald font-mono text-xs tracking-[0.3em] uppercase mb-3">Our Craft</p>
-      <h2 class="font-display text-4xl sm:text-5xl text-maroon font-semibold">Services, priced plainly</h2>
-      <p class="mt-4 text-ink/65 leading-relaxed">Every service is performed by academy-trained stylists, with the same technique taught to our students — so quality never depends on who's free that day.</p>
+<section id="services" class="px-5 md:px-8 py-24 md:py-28" style="background:var(--surface)">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl reveal">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] mb-3" style="color:var(--brass)">What we shoot</p>
+      <h2 class="font-display text-3xl md:text-5xl" style="color:var(--bone)">Services built around your occasion</h2>
+      <p class="mt-4" style="color:var(--bone-dim)">Pick a package below and hold your date instantly. Every package includes a personal consultation call before the shoot.</p>
     </div>
 
-    <!-- Tabs -->
-    <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 reveal">
-      <button data-tab="hair" class="service-tab active px-5 py-2.5 rounded-full text-sm font-semibold border border-maroon/15 transition-colors">Hair</button>
-      <button data-tab="skin" class="service-tab px-5 py-2.5 rounded-full text-sm font-semibold border border-maroon/15 transition-colors">Skin</button>
-      <button data-tab="bridal" class="service-tab px-5 py-2.5 rounded-full text-sm font-semibold border border-maroon/15 transition-colors">Bridal</button>
-      <button data-tab="grooming" class="service-tab px-5 py-2.5 rounded-full text-sm font-semibold border border-maroon/15 transition-colors">Men's Grooming</button>
-    </div>
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-    <div id="service-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal"></div>
+      <div class="card frame-corners rounded-sm p-7 flex flex-col reveal">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+        <p class="font-mono text-xs tracking-widest" style="color:var(--brass)">01</p>
+        <h3 class="font-display text-xl mt-4" style="color:var(--bone)">Wedding Photography</h3>
+        <p class="mt-3 text-sm flex-1" style="color:var(--bone-dim)">Full-day candid and traditional coverage of your baraat, phere and reception, with a dedicated second shooter.</p>
+        <div class="mt-6 flex items-center justify-between font-mono text-xs" style="color:var(--brass-light)">
+          <span>From ₹25,000</span><span>8–10 hrs</span>
+        </div>
+        <a href="#contact" data-service="Wedding Photography" class="book-btn mt-5 text-center btn-secondary rounded-full py-2.5 text-xs font-mono uppercase tracking-widest">Book This</a>
+      </div>
+
+      <div class="card frame-corners rounded-sm p-7 flex flex-col reveal">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+        <p class="font-mono text-xs tracking-widest" style="color:var(--brass)">02</p>
+        <h3 class="font-display text-xl mt-4" style="color:var(--bone)">Pre-Wedding Shoot</h3>
+        <p class="mt-3 text-sm flex-1" style="color:var(--bone-dim)">A relaxed outdoor session around Gaya to capture your story before the big day, styled and paced for you both.</p>
+        <div class="mt-6 flex items-center justify-between font-mono text-xs" style="color:var(--brass-light)">
+          <span>From ₹8,000</span><span>3 hrs</span>
+        </div>
+        <a href="#contact" data-service="Pre-Wedding Shoot" class="book-btn mt-5 text-center btn-secondary rounded-full py-2.5 text-xs font-mono uppercase tracking-widest">Book This</a>
+      </div>
+
+      <div class="card frame-corners rounded-sm p-7 flex flex-col reveal">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+        <p class="font-mono text-xs tracking-widest" style="color:var(--brass)">03</p>
+        <h3 class="font-display text-xl mt-4" style="color:var(--bone)">Portrait &amp; Family Sessions</h3>
+        <p class="mt-3 text-sm flex-1" style="color:var(--bone-dim)">In-studio or at-home portraits for families, newborns and birthdays, with lighting set up around your space.</p>
+        <div class="mt-6 flex items-center justify-between font-mono text-xs" style="color:var(--brass-light)">
+          <span>From ₹2,500</span><span>1 hr</span>
+        </div>
+        <a href="#contact" data-service="Portrait &amp; Family Session" class="book-btn mt-5 text-center btn-secondary rounded-full py-2.5 text-xs font-mono uppercase tracking-widest">Book This</a>
+      </div>
+
+      <div class="card frame-corners rounded-sm p-7 flex flex-col reveal">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+        <p class="font-mono text-xs tracking-widest" style="color:var(--brass)">04</p>
+        <h3 class="font-display text-xl mt-4" style="color:var(--bone)">Traditional &amp; Event Coverage</h3>
+        <p class="mt-3 text-sm flex-1" style="color:var(--bone-dim)">Tilak, mundan, puja and corporate functions covered with classic framing plus printed album on request.</p>
+        <div class="mt-6 flex items-center justify-between font-mono text-xs" style="color:var(--brass-light)">
+          <span>From ₹5,000</span><span>4 hrs</span>
+        </div>
+        <a href="#contact" data-service="Traditional &amp; Event Coverage" class="book-btn mt-5 text-center btn-secondary rounded-full py-2.5 text-xs font-mono uppercase tracking-widest">Book This</a>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- ============ REVIEWS ============ -->
-<section id="reviews" class="py-24 sm:py-32 bg-maroon-dark relative overflow-hidden grain">
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[20rem] bg-gold/10 blur-3xl rounded-full"></div>
-  <div class="relative max-w-7xl mx-auto px-5 sm:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-      <p class="text-gold-light font-mono text-xs tracking-[0.3em] uppercase mb-3">Social Proof</p>
-      <h2 class="font-display text-4xl sm:text-5xl text-cream font-semibold">What Gaya says about us</h2>
-
-      <div class="mt-6 inline-flex items-center gap-3 bg-cream/10 border border-gold/30 rounded-full px-5 py-2.5">
-        <span class="flex text-gold-light text-lg tracking-tighter">★★★★★</span>
-        <span class="text-cream text-sm font-semibold">4.9/5 · Based on Google Maps Reviews</span>
+<section id="reviews" class="px-5 md:px-8 py-24 md:py-28">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 reveal">
+      <div class="max-w-xl">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] mb-3" style="color:var(--brass)">Word around Gaya</p>
+        <h2 class="font-display text-3xl md:text-5xl" style="color:var(--bone)">What families are saying</h2>
+      </div>
+      <div class="inline-flex items-center gap-3 card frame-corners rounded-sm px-5 py-4">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+        <div class="flex" style="color:var(--brass)">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.7 5.9 6.3.6-4.8 4.3 1.4 6.2L10 15l-5.6 3 1.4-6.2L1 8.5l6.3-.6z"/></svg>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.7 5.9 6.3.6-4.8 4.3 1.4 6.2L10 15l-5.6 3 1.4-6.2L1 8.5l6.3-.6z"/></svg>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.7 5.9 6.3.6-4.8 4.3 1.4 6.2L10 15l-5.6 3 1.4-6.2L1 8.5l6.3-.6z"/></svg>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.7 5.9 6.3.6-4.8 4.3 1.4 6.2L10 15l-5.6 3 1.4-6.2L1 8.5l6.3-.6z"/></svg>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.7 5.9 6.3.6-4.8 4.3 1.4 6.2L10 15l-5.6 3 1.4-6.2L1 8.5l6.3-.6z"/></svg>
+        </div>
+        <p class="font-mono text-xs uppercase tracking-widest" style="color:var(--bone)">4.9/5 &middot; Google Maps Reviews</p>
       </div>
     </div>
 
-    <div id="review-track" class="flex gap-6 overflow-x-auto scrollbar-none pb-4 reveal snap-x snap-mandatory">
-      <!-- injected by JS -->
-    </div>
-    <div class="flex justify-center gap-2 mt-6">
-      <button id="rev-prev" aria-label="Previous reviews" class="w-10 h-10 rounded-full border border-cream/25 text-cream flex items-center justify-center hover:bg-cream/10 transition-colors">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </button>
-      <button id="rev-next" aria-label="Next reviews" class="w-10 h-10 rounded-full border border-cream/25 text-cream flex items-center justify-center hover:bg-cream/10 transition-colors">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </button>
+    <div id="reviewTrack" class="mt-12 flex gap-6 overflow-x-auto pb-4 scrollbar-thin snap-x snap-mandatory">
+      <div class="snap-start shrink-0 w-[85%] sm:w-[360px] card frame-corners rounded-sm p-7 reveal">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+        <div class="flex text-sm mb-4" style="color:var(--brass)">★★★★★</div>
+        <p style="color:var(--bone-dim)">"They shot my sister's wedding and every candid felt personal, not staged. The album came out beautifully and on time."</p>
+        <p class="mt-5 font-mono text-xs uppercase tracking-widest" style="color:var(--bone)">Priya S. &middot; Wedding</p>
+      </div>
+      <div class="snap-start shrink-0 w-[85%] sm:w-[360px] card frame-corners rounded-sm p-7 reveal">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+        <div class="flex text-sm mb-4" style="color:var(--brass)">★★★★★</div>
+        <p style="color:var(--bone-dim)">"Very patient with our newborn during the portrait session. Sonu ji made sure the lighting was soft and the baby stayed comfortable."</p>
+        <p class="mt-5 font-mono text-xs uppercase tracking-widest" style="color:var(--bone)">Rakesh K. &middot; Family Portrait</p>
+      </div>
+      <div class="snap-start shrink-0 w-[85%] sm:w-[360px] card frame-corners rounded-sm p-7 reveal">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+        <div class="flex text-sm mb-4" style="color:var(--brass)">★★★★★</div>
+        <p style="color:var(--bone-dim)">"Booked the pre-wedding package on short notice and they still found us a beautiful location around Gaya. Highly recommend."</p>
+        <p class="mt-5 font-mono text-xs uppercase tracking-widest" style="color:var(--bone)">Anjali &amp; Vivek</p>
+      </div>
+      <div class="snap-start shrink-0 w-[85%] sm:w-[360px] card frame-corners rounded-sm p-7 reveal">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+        <div class="flex text-sm mb-4" style="color:var(--brass)">★★★★★</div>
+        <p style="color:var(--bone-dim)">"Covered our mundan ceremony with real respect for the rituals while still getting modern, sharp shots. Family loved the prints."</p>
+        <p class="mt-5 font-mono text-xs uppercase tracking-widest" style="color:var(--bone)">Meena D. &middot; Traditional Event</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ DASHBOARD PREVIEW ============ -->
-<section id="dashboard" class="py-24 sm:py-32 bg-cream">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-      <p class="text-emerald font-mono text-xs tracking-[0.3em] uppercase mb-3">Manage Bookings</p>
-      <h2 class="font-display text-4xl sm:text-5xl text-maroon font-semibold">Your appointments, always in view</h2>
-      <p class="mt-4 text-ink/65 leading-relaxed">Every booking gives you a client dashboard — see your next visit, today's open slots, and your visit history at a glance.</p>
+<!-- ============ DASHBOARD ============ -->
+<section id="dashboard" class="px-5 md:px-8 py-24 md:py-28" style="background:var(--surface)">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl reveal">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] mb-3" style="color:var(--brass)">For returning clients</p>
+      <h2 class="font-display text-3xl md:text-5xl" style="color:var(--bone)">Manage your bookings in one place</h2>
+      <p class="mt-4" style="color:var(--bone-dim)">A quick look at what your client dashboard shows once you've booked with us — track your session, see open slots, and message us directly.</p>
     </div>
 
-    <!-- Browser-chrome styled dashboard -->
-    <div class="reveal rounded-2xl border border-maroon/10 shadow-2xl shadow-maroon/10 overflow-hidden bg-white">
-      <div class="flex items-center gap-2 px-5 py-3 bg-ink/5 border-b border-maroon/10">
-        <span class="w-3 h-3 rounded-full bg-red-300"></span>
-        <span class="w-3 h-3 rounded-full bg-yellow-300"></span>
-        <span class="w-3 h-3 rounded-full bg-emerald/40"></span>
-        <span class="ml-4 text-xs text-ink/40 font-mono">satyasalon.com/dashboard</span>
+    <div class="mt-12 card frame-corners rounded-sm p-6 md:p-10 reveal">
+      <span class="fc-tr"></span><span class="fc-bl"></span>
+
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-6 border-b" style="border-color:rgba(200,155,76,0.15)">
+        <div>
+          <p id="dashGreeting" class="font-display text-2xl" style="color:var(--bone)">Good day, Guest</p>
+          <p class="font-mono text-xs uppercase tracking-widest mt-1" style="color:var(--bone-dim)">Client ID SPS-0417</p>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2 rounded-full font-mono text-[11px] uppercase tracking-widest" style="background:rgba(200,155,76,0.12); color:var(--brass-light)">
+          <span class="w-2 h-2 rounded-full" style="background:#7CBE8C"></span> Studio Open Now
+        </div>
       </div>
 
-      <div class="p-6 sm:p-10">
-        <!-- Greeting -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-          <div>
-            <p id="greeting-text" class="font-display text-2xl text-maroon">Good afternoon, Priya 👋</p>
-            <p class="text-ink/55 text-sm mt-1">Here's what's on your calendar with us.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+
+        <div class="p-6 rounded-sm" style="background:var(--ink); border:1px solid rgba(200,155,76,0.15)">
+          <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Next Appointment</p>
+          <p class="font-display text-xl mt-3" style="color:var(--bone)">Pre-Wedding Shoot</p>
+          <p class="mt-1 text-sm" style="color:var(--bone-dim)">Sat, 18 Jul &middot; 4:00 PM</p>
+          <div class="mt-4 h-1.5 rounded-full overflow-hidden" style="background:rgba(200,155,76,0.15)">
+            <div class="h-full" style="width:62%; background:var(--brass)"></div>
           </div>
-          <button id="new-booking-btn" class="bg-maroon text-cream text-sm font-semibold px-5 py-3 rounded-full hover:bg-maroon-dark transition-colors">+ New Booking</button>
+          <p class="mt-2 font-mono text-[11px]" style="color:var(--bone-dim)">13 days to go</p>
         </div>
 
-        <div class="grid sm:grid-cols-3 gap-5">
-          <!-- Next appointment -->
-          <div class="rounded-xl border border-maroon/10 bg-blush/40 p-6">
-            <p class="text-xs font-mono uppercase tracking-widest text-maroon/60 mb-3">Next Appointment</p>
-            <p class="font-display text-xl text-maroon mb-1">Bridal Trial Run</p>
-            <p class="text-ink/60 text-sm">Sat, 11 July · 4:30 PM</p>
-            <p class="text-ink/60 text-sm">with Anjali Ma'am</p>
-            <div class="mt-4 flex gap-2">
-              <button class="text-xs font-semibold text-emerald border border-emerald/30 rounded-full px-3 py-1.5 hover:bg-emerald/10 transition-colors">Reschedule</button>
-              <button class="text-xs font-semibold text-maroon border border-maroon/30 rounded-full px-3 py-1.5 hover:bg-maroon/10 transition-colors">Cancel</button>
-            </div>
+        <div class="p-6 rounded-sm" style="background:var(--ink); border:1px solid rgba(200,155,76,0.15)">
+          <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Available Slots Today</p>
+          <div id="slotGrid" class="mt-4 grid grid-cols-3 gap-2 font-mono text-[11px]">
+            <button type="button" class="slot-btn py-2 rounded-full border" style="border-color:rgba(200,155,76,0.3); color:var(--bone-dim)">10:00</button>
+            <button type="button" class="slot-btn py-2 rounded-full border" style="border-color:rgba(200,155,76,0.3); color:var(--bone-dim)">12:30</button>
+            <button type="button" class="slot-btn py-2 rounded-full border opacity-30 cursor-not-allowed" disabled style="border-color:rgba(200,155,76,0.3); color:var(--bone-dim)">2:00</button>
+            <button type="button" class="slot-btn py-2 rounded-full border" style="border-color:rgba(200,155,76,0.3); color:var(--bone-dim)">4:00</button>
+            <button type="button" class="slot-btn py-2 rounded-full border" style="border-color:rgba(200,155,76,0.3); color:var(--bone-dim)">5:30</button>
+            <button type="button" class="slot-btn py-2 rounded-full border opacity-30 cursor-not-allowed" disabled style="border-color:rgba(200,155,76,0.3); color:var(--bone-dim)">7:00</button>
           </div>
-
-          <!-- Slots today -->
-          <div class="rounded-xl border border-maroon/10 bg-emerald/5 p-6">
-            <p class="text-xs font-mono uppercase tracking-widest text-emerald/70 mb-3">Available Today</p>
-            <p class="font-display text-4xl text-emerald mb-1"><span id="slot-count">6</span> <span class="text-lg font-body font-medium text-ink/50">slots</span></p>
-            <div id="slot-list" class="mt-4 grid grid-cols-3 gap-2 text-xs font-mono"></div>
-          </div>
-
-          <!-- Visit history -->
-          <div class="rounded-xl border border-maroon/10 bg-gold/10 p-6">
-            <p class="text-xs font-mono uppercase tracking-widest text-gold-dark mb-3">Loyalty Snapshot</p>
-            <p class="font-display text-4xl text-maroon mb-1">12 <span class="text-lg font-body font-medium text-ink/50">visits</span></p>
-            <p class="text-ink/60 text-sm mb-4">3 more visits to unlock your Gold Member facial.</p>
-            <div class="w-full h-2 rounded-full bg-ink/10 overflow-hidden">
-              <div class="h-full bg-gold" style="width:80%"></div>
-            </div>
-          </div>
+          <p id="slotHint" class="mt-3 font-mono text-[11px]" style="color:var(--bone-dim)">Tap a slot to hold it for 15 minutes.</p>
         </div>
+
+        <div class="p-6 rounded-sm" style="background:var(--ink); border:1px solid rgba(200,155,76,0.15)">
+          <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Your Sessions</p>
+          <div class="mt-4 space-y-3 text-sm" style="color:var(--bone-dim)">
+            <div class="flex justify-between"><span>Mundan Ceremony</span><span class="font-mono text-[11px]" style="color:var(--brass-light)">Delivered</span></div>
+            <div class="flex justify-between"><span>Family Portrait</span><span class="font-mono text-[11px]" style="color:var(--brass-light)">Delivered</span></div>
+            <div class="flex justify-between"><span>Pre-Wedding Shoot</span><span class="font-mono text-[11px]" style="color:#E4B45C">Upcoming</span></div>
+          </div>
+          <a href="#contact" class="mt-6 inline-block w-full text-center btn-secondary rounded-full py-2.5 text-xs font-mono uppercase tracking-widest">Message Studio</a>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ CONTACT / LEAD FORM ============ -->
-<section id="contact" class="py-24 sm:py-32 bg-blush/30">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <p class="text-emerald font-mono text-xs tracking-[0.3em] uppercase mb-3">Get In Touch</p>
-      <h2 class="font-display text-4xl sm:text-5xl text-maroon font-semibold">Reserve your chair</h2>
-      <p class="mt-4 text-ink/65 leading-relaxed">Tell us what you need and when — our front desk will confirm your slot within the hour, during working hours.</p>
-    </div>
+<section id="contact" class="px-5 md:px-8 py-24 md:py-28">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
 
-    <div class="grid lg:grid-cols-5 gap-10">
-      <!-- Form -->
-      <form id="lead-form" class="lg:col-span-3 bg-white rounded-2xl shadow-xl shadow-maroon/5 p-7 sm:p-10 reveal">
-        <div id="form-success" class="hidden mb-6 rounded-xl bg-emerald/10 border border-emerald/30 text-emerald px-5 py-4 text-sm font-medium">
-          Thank you — your request has been received. Our team will call to confirm shortly.
+    <div class="reveal">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] mb-3" style="color:var(--brass)">Let's talk dates</p>
+      <h2 class="font-display text-3xl md:text-5xl" style="color:var(--bone)">Hold your date today</h2>
+      <p class="mt-4 max-w-md" style="color:var(--bone-dim)">Tell us a little about your occasion and we'll call you back within a few hours to confirm details and availability.</p>
+
+      <form id="leadForm" class="mt-9 card frame-corners rounded-sm p-7 space-y-5">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+
+        <div>
+          <label class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Full Name</label>
+          <input type="text" required placeholder="Your name" class="mt-2 w-full rounded-sm px-4 py-3 text-sm">
         </div>
 
         <div class="grid sm:grid-cols-2 gap-5">
-          <div class="sm:col-span-2">
-            <label for="fullname" class="block text-sm font-semibold text-ink/80 mb-2">Full Name</label>
-            <input id="fullname" name="fullname" type="text" required placeholder="Your name" class="w-full rounded-lg border border-ink/15 px-4 py-3 text-sm bg-cream/40 focus:bg-white transition-colors" />
-          </div>
-
           <div>
-            <label for="phone" class="block text-sm font-semibold text-ink/80 mb-2">Phone Number</label>
-            <input id="phone" name="phone" type="tel" required placeholder="+91 00000 00000" class="w-full rounded-lg border border-ink/15 px-4 py-3 text-sm bg-cream/40 focus:bg-white transition-colors" />
+            <label class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Phone Number</label>
+            <input type="tel" required placeholder="+91 98765 43210" class="mt-2 w-full rounded-sm px-4 py-3 text-sm">
           </div>
-
           <div>
-            <label for="email" class="block text-sm font-semibold text-ink/80 mb-2">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" class="w-full rounded-lg border border-ink/15 px-4 py-3 text-sm bg-cream/40 focus:bg-white transition-colors" />
-          </div>
-
-          <div>
-            <label for="service-select" class="block text-sm font-semibold text-ink/80 mb-2">Service Choice</label>
-            <select id="service-select" name="service" class="w-full rounded-lg border border-ink/15 px-4 py-3 text-sm bg-cream/40 focus:bg-white transition-colors">
-              <option>Hair Styling &amp; Care</option>
-              <option>Skin &amp; Facial</option>
-              <option>Bridal Package</option>
-              <option>Men's Grooming</option>
-              <option>Academy Enrollment Enquiry</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="pref-date" class="block text-sm font-semibold text-ink/80 mb-2">Preferred Date</label>
-            <input id="pref-date" name="date" type="date" class="w-full rounded-lg border border-ink/15 px-4 py-3 text-sm bg-cream/40 focus:bg-white transition-colors" />
-          </div>
-
-          <div>
-            <label for="pref-time" class="block text-sm font-semibold text-ink/80 mb-2">Preferred Time</label>
-            <input id="pref-time" name="time" type="time" class="w-full rounded-lg border border-ink/15 px-4 py-3 text-sm bg-cream/40 focus:bg-white transition-colors" />
+            <label class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Email</label>
+            <input type="email" placeholder="you@example.com" class="mt-2 w-full rounded-sm px-4 py-3 text-sm">
           </div>
         </div>
 
-        <button type="submit" class="mt-8 w-full bg-maroon hover:bg-maroon-dark text-cream font-bold py-4 rounded-full transition-colors shadow-md hover:shadow-lg">
-          Request Appointment
-        </button>
+        <div>
+          <label class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Service Choice</label>
+          <select id="serviceSelect" class="mt-2 w-full rounded-sm px-4 py-3 text-sm">
+            <option>Wedding Photography</option>
+            <option>Pre-Wedding Shoot</option>
+            <option>Portrait &amp; Family Session</option>
+            <option>Traditional &amp; Event Coverage</option>
+          </select>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Preferred Date</label>
+            <input type="date" class="mt-2 w-full rounded-sm px-4 py-3 text-sm">
+          </div>
+          <div>
+            <label class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Preferred Time</label>
+            <input type="time" class="mt-2 w-full rounded-sm px-4 py-3 text-sm">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary w-full py-3.5 rounded-full text-sm font-mono uppercase tracking-widest">Request Booking</button>
+        <p id="formSuccess" class="hidden text-center text-sm font-mono" style="color:var(--brass-light)">Request received — we'll call you shortly to confirm.</p>
       </form>
+    </div>
 
-      <!-- Contact essentials -->
-      <div class="lg:col-span-2 flex flex-col gap-6 reveal">
-        <div class="rounded-2xl overflow-hidden border border-maroon/10 shadow-md h-56">
-          <iframe
-            title="Salon location map"
-            class="w-full h-full"
-            style="border:0"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=24.8017625,84.992514&z=16&output=embed">
-          </iframe>
+    <div class="reveal">
+      <div class="frame-corners rounded-sm overflow-hidden h-64 md:h-72">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+        <iframe
+          class="w-full h-full grayscale-[40%] contrast-125"
+          style="border:0; filter:invert(90%) hue-rotate(180deg);"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=24.788848,85.0206822&z=15&output=embed">
+        </iframe>
+      </div>
+
+      <div class="mt-8 card frame-corners rounded-sm p-7 space-y-6">
+        <span class="fc-tr"></span><span class="fc-bl"></span>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background:rgba(200,155,76,0.12)">
+            <svg class="w-5 h-5" style="color:var(--brass)" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Studio Address</p>
+            <p class="mt-1 text-sm" style="color:var(--bone-dim)">Sonu Photography Studio Gaya Jii, Gaya, Bihar, India</p>
+          </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-maroon/10 p-7 space-y-5">
-          <div class="flex gap-4">
-            <div class="w-10 h-10 rounded-full bg-blush flex items-center justify-center text-maroon shrink-0">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.58 7-13A7 7 0 1 0 5 9c0 5.42 7 13 7 13Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
-            </div>
-            <div>
-              <p class="text-sm font-semibold text-ink">Address</p>
-              <p class="text-sm text-ink/60">Gaya, Bihar 823001 — near main market road</p>
-            </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background:rgba(200,155,76,0.12)">
+            <svg class="w-5 h-5" style="color:var(--brass)" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.05 11.05 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           </div>
-
-          <div class="flex gap-4">
-            <div class="w-10 h-10 rounded-full bg-blush flex items-center justify-center text-maroon shrink-0">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 1h2a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.43-1.22a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.6"/></svg>
-            </div>
-            <div>
-              <p class="text-sm font-semibold text-ink">Phone</p>
-              <a href="tel:+919876543210" class="text-sm text-ink/60 hover:text-maroon transition-colors">+91 98765 43210</a>
-            </div>
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Call Us</p>
+            <a href="tel:+919999999999" class="mt-1 block text-sm hover:underline" style="color:var(--bone-dim)">+91 99999 99999</a>
           </div>
+        </div>
 
-          <div class="flex gap-4">
-            <div class="w-10 h-10 rounded-full bg-blush flex items-center justify-center text-maroon shrink-0">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            </div>
-            <div>
-              <p class="text-sm font-semibold text-ink">Hours</p>
-              <p class="text-sm text-ink/60">Mon – Sat, 10:00 AM – 8:00 PM</p>
-              <p class="text-sm text-ink/60">Sunday: 11:00 AM – 5:00 PM</p>
-            </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background:rgba(200,155,76,0.12)">
+            <svg class="w-5 h-5" style="color:var(--brass)" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Hours</p>
+            <p class="mt-1 text-sm" style="color:var(--bone-dim)">Mon – Sat: 9:00 AM – 8:00 PM<br>Sunday: By appointment</p>
           </div>
         </div>
       </div>
@@ -389,197 +510,113 @@
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer class="bg-maroon-dark text-cream/70 pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-cream/10">
-      <div>
-        <div class="flex items-center gap-3 mb-4">
-          <span class="w-9 h-9 rounded-full bg-gold text-maroon-dark flex items-center justify-center font-display text-sm italic">S</span>
-          <span class="font-display text-lg text-cream">The Satya Family</span>
-        </div>
-        <p class="text-sm leading-relaxed max-w-xs">A family salon and certified academy in Gaya, training tomorrow's stylists while caring for today's clients.</p>
-      </div>
+<footer class="px-5 md:px-8 pt-20 pb-8" style="background:var(--surface); border-top:1px solid rgba(200,155,76,0.15)">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-      <div>
-        <p class="text-cream font-semibold text-sm mb-4 tracking-wide">Quick Links</p>
-        <ul class="space-y-2.5 text-sm">
-          <li><a href="#services" class="hover:text-gold-light transition-colors">Services</a></li>
-          <li><a href="#reviews" class="hover:text-gold-light transition-colors">Reviews</a></li>
-          <li><a href="#dashboard" class="hover:text-gold-light transition-colors">Manage Bookings</a></li>
-          <li><a href="#contact" class="hover:text-gold-light transition-colors">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="text-cream font-semibold text-sm mb-4 tracking-wide">Legal</p>
-        <ul class="space-y-2.5 text-sm">
-          <li><a href="#" class="hover:text-gold-light transition-colors">Privacy Policy</a></li>
-          <li><a href="#" class="hover:text-gold-light transition-colors">Terms of Service</a></li>
-          <li><a href="#" class="hover:text-gold-light transition-colors">Refund &amp; Cancellation</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="text-cream font-semibold text-sm mb-4 tracking-wide">Follow Us</p>
-        <div class="flex gap-3">
-          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center hover:border-gold hover:text-gold-light transition-colors">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
-          </a>
-          <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center hover:border-gold hover:text-gold-light transition-colors">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#" aria-label="WhatsApp" class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center hover:border-gold hover:text-gold-light transition-colors">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 1 1-3.6-6.7L20 4l-1 3.6A8 8 0 0 1 20 12Z" stroke="currentColor" stroke-width="1.4"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          </a>
-        </div>
+    <div>
+      <span class="font-display text-lg" style="color:var(--bone)">Sonu Photography Studio</span>
+      <p class="mt-3 text-sm max-w-xs" style="color:var(--bone-dim)">Gaya's studio for weddings, portraits and events — photographed with care, delivered on time.</p>
+      <div class="mt-6 flex items-center gap-3">
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full flex items-center justify-center border" style="border-color:rgba(200,155,76,0.3); color:var(--brass)">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full flex items-center justify-center border" style="border-color:rgba(200,155,76,0.3); color:var(--brass)">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M14 9h3V6h-3a3 3 0 00-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9a1 1 0 011-1z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full flex items-center justify-center border" style="border-color:rgba(200,155,76,0.3); color:var(--brass)">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="4" stroke-width="1.5"/><path d="M11 10l4 2-4 2z" fill="currentColor" stroke="none"/></svg>
+        </a>
       </div>
     </div>
 
-    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-cream/50">
-      <p>© <span id="year"></span> The Satya Family Salon &amp; Academy. All rights reserved.</p>
-      <p>Gaya, Bihar, India</p>
+    <div>
+      <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Quick Links</p>
+      <ul class="mt-4 space-y-2 text-sm" style="color:var(--bone-dim)">
+        <li><a href="#services" class="hover:underline">Services</a></li>
+        <li><a href="#reviews" class="hover:underline">Reviews</a></li>
+        <li><a href="#dashboard" class="hover:underline">Manage Bookings</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
     </div>
+
+    <div>
+      <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Legal</p>
+      <ul class="mt-4 space-y-2 text-sm" style="color:var(--bone-dim)">
+        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+        <li><a href="#" class="hover:underline">Terms of Service</a></li>
+        <li><a href="#" class="hover:underline">Refund Policy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="font-mono text-[11px] uppercase tracking-widest" style="color:var(--brass)">Studio</p>
+      <ul class="mt-4 space-y-2 text-sm" style="color:var(--bone-dim)">
+        <li>Gaya, Bihar, India</li>
+        <li><a href="tel:+919999999999" class="hover:underline">+91 99999 99999</a></li>
+        <li>Mon–Sat, 9 AM–8 PM</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto mt-14 pt-6 border-t flex flex-col sm:flex-row justify-between gap-3 font-mono text-[11px] uppercase tracking-widest" style="border-color:rgba(200,155,76,0.15); color:var(--bone-dim)">
+    <p>&copy; <span id="year"></span> Sonu Photography Studio Gaya Jii. All rights reserved.</p>
+    <p>Crafted with care in Gaya, Bihar</p>
   </div>
 </footer>
 
 <script>
+  // year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Header shadow on scroll
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 12) header.classList.add('shadow-md');
-    else header.classList.remove('shadow-md');
+  // mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
   });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-  // Mobile menu
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-  document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-  // Reveal on scroll
+  // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.12 });
   revealEls.forEach(el => io.observe(el));
 
-  // Service tab styling
-  document.querySelectorAll('.service-tab').forEach(btn => {
-    btn.addEventListener('click', () => setActiveTab(btn.dataset.tab));
+  // greeting based on time of day
+  const hour = new Date().getHours();
+  const greetingEl = document.getElementById('dashGreeting');
+  const greeting = hour < 12 ? 'Good morning, Guest' : hour < 17 ? 'Good afternoon, Guest' : 'Good evening, Guest';
+  greetingEl.textContent = greeting;
+
+  // slot selection
+  document.querySelectorAll('.slot-btn:not([disabled])').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('slotHint').textContent = `Slot ${btn.textContent} held for 15 minutes — confirm below.`;
+    });
   });
-  function styleTabs(active) {
-    document.querySelectorAll('.service-tab').forEach(b => {
-      if (b.dataset.tab === active) {
-        b.classList.add('bg-maroon', 'text-cream', 'border-maroon');
-        b.classList.remove('text-ink/70');
-      } else {
-        b.classList.remove('bg-maroon', 'text-cream', 'border-maroon');
-        b.classList.add('text-ink/70');
+
+  // book buttons prefill service select and scroll to form
+  document.querySelectorAll('.book-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const service = btn.getAttribute('data-service');
+      const select = document.getElementById('serviceSelect');
+      for (const opt of select.options) {
+        if (opt.text.replace(/&amp;/g, '&') === service) { select.value = opt.value; break; }
       }
     });
-  }
-
-  // Service data
-  const services = {
-    hair: [
-      { name: 'Signature Haircut & Style', desc: 'Precision cut finished with a wash and blow-dry, tailored to face shape.', price: '₹399', duration: '45 min' },
-      { name: 'Global Hair Colour', desc: 'Ammonia-friendly colour application with post-colour nourishing mask.', price: '₹1,999', duration: '2 hr' },
-      { name: 'Keratin Smoothening', desc: 'Frizz-control treatment for silky, manageable hair up to 4 months.', price: '₹3,499', duration: '3 hr' },
-      { name: 'Head Massage & Spa', desc: 'Warm-oil scalp massage followed by a deep-conditioning hair spa.', price: '₹699', duration: '1 hr' },
-    ],
-    skin: [
-      { name: 'Classic Clean-Up', desc: 'Deep cleansing, scrub and mask suited to your skin type.', price: '₹499', duration: '40 min' },
-      { name: 'Radiance Facial', desc: 'Brightening facial with vitamin-C infused serums and massage.', price: '₹1,299', duration: '1 hr' },
-      { name: 'De-Tan Therapy', desc: 'Targeted treatment to lift sun-tan from face, neck and arms.', price: '₹899', duration: '45 min' },
-      { name: 'Full Body Polishing', desc: 'Exfoliating scrub and moisturising wrap for even-toned skin.', price: '₹1,799', duration: '1.5 hr' },
-    ],
-    bridal: [
-      { name: 'Bridal Trial Package', desc: 'Full look trial including hair, makeup and draping, before the big day.', price: '₹2,999', duration: '2.5 hr' },
-      { name: 'Wedding Day Makeover', desc: 'HD makeup, hairstyling and saree/lehenga draping for the bride.', price: '₹9,999', duration: '4 hr' },
-      { name: 'Bridal Party Package', desc: 'Coordinated hair and makeup for up to 4 family members.', price: '₹6,499', duration: '4 hr' },
-      { name: 'Pre-Bridal Skin Course', desc: 'A 4-session glow course leading up to the wedding date.', price: '₹4,999', duration: '4 sessions' },
-    ],
-    grooming: [
-      { name: "Classic Men's Haircut", desc: 'Precision cut with hot-towel finish and beard line-up.', price: '₹249', duration: '30 min' },
-      { name: 'Beard Sculpting', desc: 'Shape and trim with straight-razor edging and conditioning oil.', price: '₹199', duration: '25 min' },
-      { name: "Men's De-Tan Facial", desc: 'Deep-cleanse facial designed for daily sun exposure.', price: '₹599', duration: '40 min' },
-      { name: 'Groom Package', desc: 'Haircut, facial, beard styling and head massage combo for grooms.', price: '₹1,999', duration: '2 hr' },
-    ],
-  };
-
-  const grid = document.getElementById('service-grid');
-  function renderServices(tab) {
-    grid.innerHTML = services[tab].map(s => `
-      <div class="card-hover bg-white rounded-2xl border border-maroon/10 p-6 flex flex-col">
-        <p class="font-display text-lg text-maroon mb-2">${s.name}</p>
-        <p class="text-sm text-ink/60 leading-relaxed flex-1">${s.desc}</p>
-        <div class="flex items-center justify-between mt-5 pt-4 border-t border-ink/10">
-          <div>
-            <p class="text-maroon font-bold">${s.price}</p>
-            <p class="text-xs text-ink/45 font-mono">${s.duration}</p>
-          </div>
-          <a href="#contact" class="text-xs font-semibold bg-blush text-maroon px-4 py-2.5 rounded-full hover:bg-maroon hover:text-cream transition-colors">Book</a>
-        </div>
-      </div>
-    `).join('');
-  }
-  function setActiveTab(tab) {
-    styleTabs(tab);
-    renderServices(tab);
-  }
-  setActiveTab('hair');
-
-  // Reviews carousel
-  const reviews = [
-    { name: 'Rina Kumari', role: 'Regular Client, Gaya', text: "The academy-trained staff really shows — my haircut has never been this consistent, visit after visit.", rating: 5 },
-    { name: 'Manoj Prasad', role: "Men's Grooming Client", text: 'Booked the groom package for my wedding. Punctual, professional, and my family loved the result.', rating: 5 },
-    { name: 'Shalini Verma', role: 'Bridal Client', text: 'My bridal trial matched the final look exactly. No surprises on the wedding morning — huge relief.', rating: 5 },
-    { name: 'Anita Devi', role: 'Skin Care Client', text: 'The de-tan therapy actually works. I noticed a visible difference after just one session.', rating: 4 },
-    { name: 'Pooja Singh', role: 'Academy Student', text: 'Training here alongside real clients taught me more in three months than a full year elsewhere.', rating: 5 },
-  ];
-  const track = document.getElementById('review-track');
-  track.innerHTML = reviews.map(r => `
-    <div class="snap-start shrink-0 w-[280px] sm:w-[320px] bg-cream/95 rounded-2xl p-6 border border-gold/20">
-      <div class="text-gold-dark text-sm mb-3">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
-      <p class="text-ink/75 text-sm leading-relaxed mb-5">"${r.text}"</p>
-      <p class="text-maroon font-semibold text-sm">${r.name}</p>
-      <p class="text-ink/45 text-xs">${r.role}</p>
-    </div>
-  `).join('');
-  document.getElementById('rev-prev').addEventListener('click', () => track.scrollBy({ left: -340, behavior: 'smooth' }));
-  document.getElementById('rev-next').addEventListener('click', () => track.scrollBy({ left: 340, behavior: 'smooth' }));
-
-  // Dashboard mock interactivity
-  const names = ['Priya', 'Rahul', 'Sneha', 'Aman', 'Kavita'];
-  document.getElementById('greeting-text').textContent = `Good ${timeGreeting()}, ${names[Math.floor(Math.random()*names.length)]} 👋`;
-  function timeGreeting() {
-    const h = new Date().getHours();
-    if (h < 12) return 'morning';
-    if (h < 17) return 'afternoon';
-    return 'evening';
-  }
-
-  const slotTimes = ['10:00', '11:30', '1:00', '2:30', '4:00', '5:30', '7:00'];
-  let slots = slotTimes.slice(0, 6);
-  function renderSlots() {
-    document.getElementById('slot-count').textContent = slots.length;
-    document.getElementById('slot-list').innerHTML = slots.map(t => `<span class="bg-white border border-emerald/20 rounded-md py-1.5 text-center text-emerald">${t}</span>`).join('');
-  }
-  renderSlots();
-
-  document.getElementById('new-booking-btn').addEventListener('click', () => {
-    if (slots.length > 0) { slots = slots.slice(0, -1); renderSlots(); }
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
   });
 
-  // Lead form
-  document.getElementById('lead-form').addEventListener('submit', (e) => {
+  // fake form submit
+  const form = document.getElementById('leadForm');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-    document.getElementById('form-success').classList.remove('hidden');
-    e.target.reset();
-    document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    success.classList.remove('hidden');
+    form.querySelectorAll('input').forEach(i => i.value = '');
+    setTimeout(() => success.classList.add('hidden'), 6000);
   });
 </script>
 
